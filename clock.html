@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Clock</title>
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+<body>
+	<div class="timezones">Timezone: <select class="timezone">
+		<option id="-12">UTC -12:00 Y Baker Island</option>
+		<option id="-11">UTC -11:00 X American Samoa</option>
+		<option id="-10">UTC -10:00 W Hawaii</option>
+		<option id="-9.5">UTC -9:30 V+ French Polynesia</option>
+		<option id="-9">UTC -9:00 V Alaska</option>
+		<option id="-8">UTC -8:00 U Pacific Time Zone</option>
+		<option id="-7">UTC -7:00 T Mountain Time Zone</option>
+		<option id="-6">UTC -6:00 S Central Time Zone</option>
+		<option id="-5">UTC -5:00 R Eastern Time Zone</option>
+		<option id="-4">UTC -4:00 Q Atlantic Time Zone</option>
+		<option id="-3.5">UTC -3:00 P+ Newfoundland Time Zone</option>
+		<option id="-3">UTC -3:00 P Brazil/Argentina</option>
+		<option id="-2">UTC -2:00 O South Georgia</option>
+		<option id="-1">UTC -1:00 N Greenland</option>
+		<option id="0">UTC 00:00 Z Coordinated Universal Time</option>
+		<option selected id="1">UTC +1:00 A Central European Time</option>
+		<option id="2">UTC +2:00 B Athens/Bucharest/Jerusalem</option>
+		<option id="3">UTC +3:00 C Moscow Time</option>
+		<option id="3.5">UTC +3:30 C+ Iran</option>
+		<option id="4">UTC +4:00 D Baku/Dubai/Samara Time</option>
+		<option id="4">UTC +4:00 D+ Afghanistan</option>
+		<option id="5">UTC +5:00 E Karachi/Tashkent/Yeketerinburg</option>
+		<option id="5.5">UTC +5:30 E+ Sri Lanka/Delhi</option>
+		<option id="5.75">UTC +5:45 E* Nepal</option>
+		<option id="6">UTC +6:00 F Almaty/Dhaka/Omsk Time</option>
+		<option id="6.5">UTC +6:30 F+ Cocos Islands</option>
+		<option id="7">UTC +7:00 G Jakarta/Bangkok/ Krasnoyarsk Time</option>
+		<option id="8">UTC +8:00 H Beijing/Perth/Irkutsk Time</option>
+		<option id="8.5">UTC +8:30 H+ North Korea</option>
+		<option id="8.75">UTC +8:45 H* Western Australia</option>
+		<option id="9">UTC +9:00 I Seoul/Tokyo</option>
+		<option id="9.5">UTC +9:30 I+ Adelaide/Broken Hill/Darwin </option>
+		<option id="10">UTC +10:00 K Australian Capital Territory</option>
+		<option id="10.5">UTC +10:30 K+ New South Wales </option>
+		<option id="11">UTC +11:00 L Srednekolymsk Time</option>
+		<option id="12">UTC +12:00 M Fiji/Kiribati/Kamchatka Time</option>
+		<option id="12.75">UTC +12:45 M* Chatham Islands </option>
+		<option id="13">UTC +13:00 M+ Phoenix Islands/Samoa </option>
+		<option id="13.75">UTC +13:45 M- Southern Hemisphere summer</option>
+		<option id="14">UTC +14:00 M++ Line Islands</option></select></div>	
+	<div class="exception">We're sorry. This application doesn't work on resolution lower than 800x600.</div>
+	<div class="clock"></div><div class="digital-mini"></div><div class="weekday"></div>
+	<button class="settings setting">Settings <span id="down" class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></button>
+	<div id="settings">
+		<div id="s1" class="setting"> Type of clock
+			<div id="radioBtn" class="btn-group">
+    					<a class="btn btn-primary btn-sm active" data-toggle="happy" data-title="24">24 hours</a>
+    					<a class="btn btn-primary btn-sm notActive" data-toggle="happy" data-title="12">12 hours</a>
+    		</div>
+    	</div>
+    	<div id="s2" class="setting"> Display: 
+    		<div id="radioBtn2" class="btn-group">
+    					<a class="btn btn-primary btn-sm notActive" data-toggle="happy" data-title="min">minutes</a>
+    					<a class="btn btn-primary btn-sm active" data-toggle="happy" data-title="sec">seconds</a>
+    					<a class="btn btn-primary btn-sm notActive" data-toggle="happy" data-title="mill">milliseconds</a>
+    		</div>
+    	</div>
+		<div id="s3" class="setting"> Ticks: 
+    			<label class="btn btn-primary"> hours 
+				<input id="hour" class="tick" type="checkbox" checked autocomplete="off">
+				</label>
+				<label class="btn btn-primary"> minutes
+				<input id="minute" class="tick" type="checkbox" checked autocomplete="off">
+				</label>
+				<label class="btn btn-primary"> seconds
+				<input id="second" class="tick" type="checkbox" checked autocomplete="off">
+				</label>
+    	</div>
+		<div id="s4" class="setting"> Hands: 
+    			<label class="btn btn-primary"> hours 
+				<input id="hour" class="hand" type="checkbox" checked autocomplete="off">
+				</label>
+				<label class="btn btn-primary"> minutes
+				<input id="minute" class="hand" type="checkbox" checked autocomplete="off">
+				</label>
+				<label class="btn btn-primary"> seconds
+				<input id="second" class="hand" type="checkbox" checked autocomplete="off">
+				</label>
+    	</div>
+    	<div id="s5" class="setting">Labels: 
+    			<label class="btn btn-primary"> hours 
+				<input id="hour" class="label1" type="checkbox" checked autocomplete="off">
+				</label>
+				<label class="btn btn-primary"> seconds
+				<input id="second" class="label1" type="checkbox" checked autocomplete="off">
+				</label>
+    	</div>
+    	<div id="s6" class="setting"> Numbers: 
+    			<label class="btn btn-primary"> Arabic 
+				<input id="arabic" class="number" type="checkbox" checked autocomplete="off">
+				</label>
+				<label class="btn btn-primary"> Romanian
+				<input id="romanian" class="number" type="checkbox" autocomplete="off">
+				</label> <span class="info-mark">?</span> <span class="info">Resets settings</span>
+    	</div>
+    	<div id="s7" class="setting"> Add-ons: 
+    			<label class="btn btn-primary"> date
+				<input id="date" class="add" type="checkbox" checked autocomplete="off">
+				</label>
+				<label class="btn btn-primary"> week day
+				<input id="weekday" class="add" type="checkbox" checked autocomplete="off">
+				</label>
+    	</div>
+	</div>
+	<button class="switch">
+		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Digital Clock<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
